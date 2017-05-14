@@ -55,7 +55,7 @@ function main(){
         }
     });
 
-    $(".question .answer[data-score='0']").click();
+    // $(".question .answer[data-score='0']").click();
 
     $(".modal .close").click(function(){ $(this).parents(".modal").addClass("hide"); });
 }
