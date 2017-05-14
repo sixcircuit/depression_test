@@ -28,7 +28,7 @@
             <div class="checklist clearfix">
                 <div class="header">
                     <div class="title">Burns Depression Checklist</div>
-                    <div class="instructions">Instructions: <span>Put a check to indicate how much you have experienced each symptom during the past week, including today.  Please answer all 25 items.</span></div>
+                    <div class="instructions">Instructions: <span>Put a check (by clicking or tapping) to indicate how much you have experienced each symptom during the past week, including today.  Please answer all 25 items.</span></div>
                 </div>
 
                 {{#each checklist}}
@@ -36,9 +36,11 @@
                     <div class="title">
                         <div class="text">{{title}}</div>
                         <div class="answers">
-                        {{#each ../answers}}
-                            <div class="answer" data-score="{{score}}"><span class="label">{{title}}</span></div>
-                        {{/each}}
+                            {{#each ../answers}}
+                            <div class="answer hide" data-score="{{score}}">
+                                    <span class="label hide">{{title}}</span>
+                            </div>
+                            {{/each}}
                         </div>
                     </div>
                     {{#each questions}}
@@ -48,9 +50,13 @@
                             {{#each ../../answers}}
                             <div class="answer" data-score="{{score}}">
                                 <span class="icon glyphicon glyphicon-ok"></span>
-                                <span class="label">{{title}}</span>
                             </div>
                             {{/each}}
+                            <div class="labels">
+                            {{#each ../../answers}}
+                                <div class="label"><span class="label">{{title}}</span></div>
+                            {{/each}}
+                            </div>
                         </div>
                     </div>
                     {{/each}}
