@@ -1,0 +1,760 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/dry.underscore.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/glyphicons.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384&#45;BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+
+    <body class="clearfix">
+        <div class="modal suicide hide">
+            <div class="container">
+                <div class="header">
+                    <div class="title"></div>
+                    <div class="close"><span class="glyphicon glyphicon-remove"></span></div>
+                </div>
+                <div class="content clearfix">
+                    If you're thinking about suicide, please <a target="_blank" href="https://www.helpguide.org/articles/suicide-prevention/suicide-help-dealing-with-your-suicidal-thoughts-and-feelings.htm">read this</a> or call 1-800-273-TALK (8255) in the U.S.<br/> <br/>
+                    There is hope and help.<br/> <br/>
+                    To find a suicide helpline outside the U.S. visit <a href="http://www.iasp.info/resources/Crisis_Centres/" target="_blank">IASP</a> or <a href="http://www.suicide.org/international-suicide-hotlines.html" target="_blank">Suicide.org</a>.
+                </div>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="checklist clearfix">
+                <div class="header">
+                    <div class="title">Burns Depression Checklist</div>
+                    <div class="instructions">Instructions: <span>Put a check to indicate how much you have experienced each symptom during the past week, including today.  Please answer all 25 items.</span></div>
+                </div>
+
+                <div class="questions">
+                    <div class="title">
+                        <div class="text">Thoughts and Feelings</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0"><span class="label">Not At All</span></div>
+                            <div class="answer" data-score="1"><span class="label">Somewhat</span></div>
+                            <div class="answer" data-score="2"><span class="label">Moderately</span></div>
+                            <div class="answer" data-score="3"><span class="label">A Lot</span></div>
+                            <div class="answer" data-score="4"><span class="label">Extremely</span></div>
+                        </div>
+                    </div>
+                    <div class="question active ">
+                        <div class="text">1. Feeling sad or down in the dumps</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">2. Feeling unhappy or blue</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">3. Crying spells or tearfulness</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">4. Feeling discouraged</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">5. Feeling hopeless</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">6. Low self-esteem</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">7. Feeling worthless or inadequate</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">8. Guilt or shame</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">9. Criticizing yourself or blaming yourself</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">10. Difficulty making decisions</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="title">
+                        <div class="text">Activities and Personal Relationships</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0"><span class="label">Not At All</span></div>
+                            <div class="answer" data-score="1"><span class="label">Somewhat</span></div>
+                            <div class="answer" data-score="2"><span class="label">Moderately</span></div>
+                            <div class="answer" data-score="3"><span class="label">A Lot</span></div>
+                            <div class="answer" data-score="4"><span class="label">Extremely</span></div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">11. Loss of interest in family, friends or colleagues</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">12. Loneliness</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">13. Spending less time with family or friends</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">14. Loss of motivation</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">15. Loss of interest in work or other activities</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">16. Avoiding work or other activities</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">17. Loss of pleasure or satisfaction in life</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="title">
+                        <div class="text">Physical Symptoms</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0"><span class="label">Not At All</span></div>
+                            <div class="answer" data-score="1"><span class="label">Somewhat</span></div>
+                            <div class="answer" data-score="2"><span class="label">Moderately</span></div>
+                            <div class="answer" data-score="3"><span class="label">A Lot</span></div>
+                            <div class="answer" data-score="4"><span class="label">Extremely</span></div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">18. Feeling tired</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">19. Difficulty sleeping or sleeping too much</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">20. Decreased or increased appetite</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">21. Loss of interest in sex</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">22. Worrying about your health</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="title">
+                        <div class="text">Suicidal Urges</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0"><span class="label">Not At All</span></div>
+                            <div class="answer" data-score="1"><span class="label">Somewhat</span></div>
+                            <div class="answer" data-score="2"><span class="label">Moderately</span></div>
+                            <div class="answer" data-score="3"><span class="label">A Lot</span></div>
+                            <div class="answer" data-score="4"><span class="label">Extremely</span></div>
+                        </div>
+                    </div>
+                    <div class="question  ">
+                        <div class="text">23. Do you have any suicidal thoughts?</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  suicide">
+                        <div class="text">24. Would you like to end your life?</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question  suicide">
+                        <div class="text">25. Do you have a plan for harming yourself?</div>
+                        <div class="answers">
+                            <div class="answer" data-score="0">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Not At All</span>
+                            </div>
+                            <div class="answer" data-score="1">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Somewhat</span>
+                            </div>
+                            <div class="answer" data-score="2">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Moderately</span>
+                            </div>
+                            <div class="answer" data-score="3">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">A Lot</span>
+                            </div>
+                            <div class="answer" data-score="4">
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                                <span class="label">Extremely</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="results clearfix hide">
+                <div class="header hide">
+                    <div class="title">Results</div>
+                    <!-- <div class="score">Score: <span class="value"></span></div>   -->
+                    <!-- <div class="result">Result: <span class="value"></span></div> -->
+                </div>
+                <div class="content">
+                    <div class="sentence"><span class="value"></span></div>
+                    <div class="help">
+                        <div class="hope">If you treat your depression you will feel better. I promise. There is hope.</div>
+                        <div class="resources">Read <a target="_blank" href="https://www.amazon.com/Feeling-Good-New-Mood-Therapy/dp/0380810336">this book</a> or <a target="_blank" href="https://therapists.psychologytoday.com/rms">find a therapist</a>.</div>
+                        <small>(In a double blind clinical study the book relieved the symptoms of depression as effectively as medication.)</small>
+                        <small class="smaller">(I'm not getting paid for the link.)</small>
+                    </div>
+                    <div class="legend hide">
+                        <div class="title">Level of Depression</div>
+                        <div class="values">
+                            <div class="value">
+                                <span class="range">0-5</span>
+                                <span class="result">No Depression</span>
+                            </div>
+                            <div class="value">
+                                <span class="range">6-10</span>
+                                <span class="result">Normal but unhappy</span>
+                            </div>
+                            <div class="value">
+                                <span class="range">11-25</span>
+                                <span class="result">Mild depression</span>
+                            </div>
+                            <div class="value">
+                                <span class="range">26-50</span>
+                                <span class="result">Moderate depression</span>
+                            </div>
+                            <div class="value">
+                                <span class="range">51-75</span>
+                                <span class="result">Severe depression</span>
+                            </div>
+                            <div class="value">
+                                <span class="range">76-100</span>
+                                <span class="result">Extreme depression</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript"> window.data = _.parse("{\"scoring_key\":[{\"min\":0,\"max\":5,\"result\":\"No Depression\",\"normal\":true},{\"min\":6,\"max\":10,\"result\":\"Normal but unhappy\",\"normal\":true},{\"min\":11,\"max\":25,\"result\":\"Mild depression\"},{\"min\":26,\"max\":50,\"result\":\"Moderate depression\"},{\"min\":51,\"max\":75,\"result\":\"Severe depression\"},{\"min\":76,\"max\":100,\"result\":\"Extreme depression\"}]}"); </script>
+
+</html>

@@ -1,0 +1,99 @@
+#!/usr/bin/env node
+
+var _ = require('dry-underscore');
+
+var checklist = [
+    { 
+        title: "Thoughts and Feelings",
+        questions: [
+          "Feeling sad or down in the dumps",
+          "Feeling unhappy or blue",
+          "Crying spells or tearfulness",
+          "Feeling discouraged",
+          "Feeling hopeless",
+          "Low self-esteem",
+          "Feeling worthless or inadequate",
+          "Guilt or shame",
+          "Criticizing yourself or blaming yourself",
+          "Difficulty making decisions",
+        ]
+    },{
+        title: "Activities and Personal Relationships",
+        questions: [
+            "Loss of interest in family, friends or colleagues",
+            "Loneliness",
+            "Spending less time with family or friends",
+            "Loss of motivation",
+            "Loss of interest in work or other activities",
+            "Avoiding work or other activities",
+            "Loss of pleasure or satisfaction in life",
+        ]
+    },{
+        title: "Physical Symptoms",
+        questions: [
+            "Feeling tired",
+            "Difficulty sleeping or sleeping too much",
+            "Decreased or increased appetite",
+            "Loss of interest in sex",
+            "Worrying about your health",
+        ]
+    },{
+        title: "Suicidal Urges",
+        questions: [
+            "Do you have any suicidal thoughts?",
+            { text: "Would you like to end your life?", suicide: true },
+            { text: "Do you have a plan for harming yourself?", suicide: true },
+        ]
+    }
+];
+
+var question_number = 0;
+_.each(checklist, function(cl){
+    cl.questions = _.map(cl.questions, function(question){
+        question_number++;
+        if(_.isString(question)){ question = { text: question }; }
+        return(_.extend({ first: (question_number === 1),  number: question_number }, question));
+    });
+});
+
+var answers = [
+    { score: 0, title: "Not At All" },
+    { score: 1, title: "Somewhat" },
+    { score: 2, title: "Moderately" },
+    { score: 3, title: "A Lot" },
+    { score: 4, title: "Extremely" },
+];
+
+var scoring_key = [
+    { min: 0, max: 5, result: "No Depression", normal: true },
+    { min: 6, max: 10, result: "Normal but unhappy", normal: true },
+    { min: 11, max: 25, result: "Mild depression" },
+    { min: 26, max: 50, result: "Moderate depression" },
+    { min: 51, max: 75, result: "Severe depression" },
+    { min: 76, max: 100, result: "Extreme depression" }
+];
+
+var legend = {
+    title: "Level of Depression",
+    values: scoring_key
+};
+
+function main(){
+
+    _.render.load_file("page", "./page.html.hb");
+    // _.render.load_file("checklist", "./checklist.html.hb");
+
+    var page_data = { scoring_key: scoring_key };
+
+    var hash = {
+        checklist: checklist,
+        answers: answers,
+        legend: legend,
+        page_data: _.stringify(_.stringify(page_data))
+    };
+
+    _.stdout(_.render("page", hash));
+}
+
+main();
+

@@ -1,0 +1,2 @@
+#!/bin/bash
+./compile > bdc.html && open ./bdc.html

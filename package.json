@@ -1,0 +1,13 @@
+{
+    "name": "depression_checklist",
+    "description": "burn's depression checklist",
+    "version": "0.0.1",
+    "author": {
+        "name": "Kendrick Taylor",
+        "email": "kendrick@circuitsix.com"
+    },
+    "dependencies": {
+        "dry-underscore" : ""
+    }
+}
+
