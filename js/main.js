@@ -22,19 +22,45 @@ function calculate_results(){
 
     if(!result){ return alert("There was a problem, we can't find that score"); }
 
-    var sentence = "You scored " + score + ". ";
+    var sentence = 'You scored <a class="score">' + score + '</a>. ';
+
+    $(".legend").addClass("hide");
 
     if(result.normal){
-        sentence += "You're not clinically depressed.<small>That's something to be happy about.<small>";
+        sentence += "You are not clinically depressed.<small>That's something to be happy about.<small>";
         $(".results .help").addClass("hide");
     }else{
         sentence += "You are suffering from " + _.lc(result.result) + "."
         $(".results .help").removeClass("hide");
     }
 
+    function toggle_legend(e){
+        e.preventDefault();
+
+        var legend = $(".legend");
+        var help = $(".results .content .help");
+        var close = $(".results .content .legend_close");
+
+        if(legend.hasClass("hide")){
+            legend.removeClass("hide");
+            help.addClass("hide");
+            close.removeClass("hide");
+        }else{
+            legend.addClass("hide");
+            if(!result.normal){
+                help.removeClass("hide");
+            }
+            close.addClass("hide");
+        }
+    }
+
     $(".results .score > .value").text(score);
     $(".results .result > .value").text(result.result);
     $(".results .sentence > .value").html(sentence);
+    $(".results .sentence > .value a.score").click(toggle_legend);
+
+    $(".results .content .legend_close").off('click');
+    $(".results .content .legend_close").click(toggle_legend);
 
     $(".results").removeClass("hide");
 }
@@ -55,9 +81,11 @@ function main(){
         }
     });
 
-    // $(".question .answer[data-score='0']").click();
-
     $(".modal .close").click(function(){ $(this).parents(".modal").addClass("hide"); });
+
+
+    // $(".question .answer[data-score='0']").click();
+    // $(".score").click();
 }
 
 $(main);

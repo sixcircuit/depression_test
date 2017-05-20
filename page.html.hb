@@ -71,17 +71,23 @@
                     <!-- <div class="result">Result: <span class="value"></span></div> -->
                 </div>
                 <div class="content">
-                    <div class="sentence"><span class="value"></span></div>
-                    <div class="help">
-                        <div class="hope">If you treat your depression you will feel better. I promise. There is hope.</div>
-                        <div class="resources">Read <a target="_blank" href="https://www.amazon.com/Feeling-Good-New-Mood-Therapy/dp/0380810336">this book</a> or <a target="_blank" href="https://therapists.psychologytoday.com/rms">find a therapist</a>.</div>
-                        <small>(In a clinical study the book relieved the symptoms of depression as effectively as medication.)</small>
-                        <small class="smaller">(I'm not getting paid for the link.)</small>
+                    <div class="wrapper clearfix">
+                        <div class="sentence"><span class="value"></span></div>
+                        <div class="help">
+                            <div class="hope">If you treat your depression you will feel better. I promise. There is hope.</div>
+                            <div class="resources">Read <a target="_blank" href="https://www.amazon.com/Feeling-Good-New-Mood-Therapy/dp/0380810336">this book</a> or <a target="_blank" href="https://therapists.psychologytoday.com/rms">find a therapist</a>.</div>
+                            <small>(In a clinical study the book relieved the symptoms of depression as effectively as medication.)</small>
+                            <small class="smaller">(I'm not getting paid for the links.)</small>
+                        </div>
                     </div>
                     <div class="legend hide">
                         {{#legend}}
-                        <div class="title">{{title}}</div>
-                        <div class="values">
+                        <div class="header">
+                            <div class="score">Score</div>
+                            <div class="title">{{title}}</div>
+                            <a class="legend_close hide"><span class="glyphicon glyphicon-remove"></span></a>
+                        </div>
+                        <div class="values clearfix">
                             {{#each values}}
                             <div class="value">
                                 <span class="range">{{min}}-{{max}}</span>
@@ -90,6 +96,7 @@
                             {{/each}}
                         </div>
                         {{/legend}}
+                        <!-- <a class="legend_close hide">Close</a> -->
                     </div>
                 </div>
             </div>

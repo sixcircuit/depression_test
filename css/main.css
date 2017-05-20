@@ -21,6 +21,12 @@ body{
     margin: 20px;
 }
 
+a{ 
+    text-decoration: none;
+    color: #268bd2;
+    cursor: pointer;
+}
+
 .hide{ display: none !important; }
 
 .header{ 
@@ -102,7 +108,9 @@ body > .container {
     padding: 3px;
     padding-left: 10px;
     float: left;
-    line-height: 54px;
+    /* line-height: 54px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
     /* font-weight: bold; */
 }
 
@@ -146,50 +154,104 @@ body > .container {
 /* .question .answer .label { display: none; } */
 /* .question.active .answer .label { display: inline; } */
 
-.legend { 
-    float: right;
+.legend > a.legend_close{
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+    padding: 20px;
+    width: 100px;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #333;
 }
 
-.legend .title {
+.legend { 
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    clear: both;
+}
+
+.legend > .header {
+    position: relative;
+    border-bottom: none;
+    padding: 0px;
+}
+
+.legend > .header > .score {
+    float: left;
+    width: 55px;
+    padding: 10px;
+    text-align: center;
+}
+
+.legend > .header > .title {
+    float: left;
     font-weight: bold;
-    padding-bottom: 5px
+    padding: 10px;
+    font-size: 14px;
+    border-left: 1px solid black;
+    /* float: left; */
+}
+
+.legend > .header > a.legend_close{
+    position: absolute;
+    display: block;
+    top: -1px;
+    right: -1px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    padding: 10px;
+    border-left: 1px solid black;
 }
 
 .legend .values {
     border: 1px solid black;
     border-bottom: none;
+    clear: both;
 }
 
 .legend .value {
     border-bottom: 1px solid black;
+    text-align: left;
+    /* float: left; */
 }
 
-.legend .range { 
+.legend .value .range { 
     width: 56px;
     display: inline-block;
     border-right: 1px solid black;
     /* text-align: left; */
+    text-align: center;
     padding: 2px;
     padding-left: 5px;
 }
 
-.legend .result {
+.legend .value .result {
+    /* text-align: left; */
     padding: 2px;
-    padding-right: 6px;
+    padding-left: 6px;
 }
 
 .results {
     margin-top: 20px;
+    margin-bottom: 20px;
     border: 1px solid black;
 }
 
-.results .header {
+.results > .header {
     border: none;
     border-bottom: 1px solid black;
 }
 
 .results .content{
     padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     float: left;
     width: 100%;
     text-align: center;
@@ -323,6 +385,14 @@ body > .container {
         margin-right: none;
     }
 
+    .legend {
+        width: 100%;
+    }
+
+    a.legend_toggle{
+        width: 100%;
+    }
+
     .answers{
         width: 100%;
     }
@@ -348,6 +418,11 @@ body > .container {
     .answers > .labels > .label {
         width: 20%;
         font-size: 10px;
+    }
+
+    .results .content{
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 }
 
