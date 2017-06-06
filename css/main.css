@@ -200,8 +200,8 @@ body > .container {
 .legend > .header > a.legend_close{
     position: absolute;
     display: block;
-    top: -1px;
-    right: -1px;
+    top: 0px;
+    right: 0px;
     font-weight: bold;
     font-size: 20px;
     color: #333;

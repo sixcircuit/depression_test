@@ -62,7 +62,10 @@ function calculate_results(){
     $(".results .content .legend_close").off('click');
     $(".results .content .legend_close").click(toggle_legend);
 
-    $(".results").removeClass("hide");
+    if($(".results").hasClass("hide")){
+        $(".results").removeClass("hide");
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    }
 }
 
 function main(){
